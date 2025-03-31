@@ -30,7 +30,7 @@ function PostsPage () {
     data.set('file', files[0]);
 
     try {
-    const response = await fetch('http://localhost:4000/published-posts', {
+    const response = await fetch('https://kernverse-backend.onrender.com/published-posts', {
       method: 'POST',
       body: data,
       credentials: 'include'

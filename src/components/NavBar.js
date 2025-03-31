@@ -12,7 +12,7 @@ function NavBar() {
   
   // const fetchProfile = async() => {
   //   try {
-  //   const response = await fetch('http://localhost:4000/profile', {
+  //   const response = await fetch('https://kernverse-backend.onrender.com/profile', {
   //     credentials: 'include',
   //   });
 
@@ -40,7 +40,7 @@ function NavBar() {
   // }, []);
 
   // const handleLogoutClick = () => {
-  //   fetch('http://localhost:4000/logout', {
+  //   fetch('https://kernverse-backend.onrender.com/logout', {
   //     method: 'POST',
   //     credentials: 'include',
   //   });

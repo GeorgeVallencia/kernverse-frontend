@@ -20,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node --max-old-space-size=1024 node_modules/.bin/react-scripts start",
     "build": "react-scripts build",
     "build-prod": "parcel build src/index.html",
     "test": "react-scripts test",

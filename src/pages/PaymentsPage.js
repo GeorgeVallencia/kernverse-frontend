@@ -41,7 +41,7 @@ function PaymentsPage() {
       partner: { id: 3, quantity: 1 }
     };
 
-    fetch('http://localhost:4000/payment-checkout', {
+    fetch('https://kernverse-backend.onrender.com/payment-checkout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

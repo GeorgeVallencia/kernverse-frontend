@@ -18,7 +18,7 @@ function RegisterPage() {
   async function Register({ fullName, username, password }) {
 
     try {
-      const response = await fetch('http://localhost:4000/register', {
+      const response = await fetch('https://kernverse-backend.onrender.com/register', {
         method: 'POST',
         body: JSON.stringify({ fullName, username, password }),
         headers: { 'Content-Type': 'application/json' }

@@ -11,7 +11,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     const fetchUser = async() => {
       try {
-        const response = await axios.get('http://localhost:4000/profile', {withCredentials:true});
+        const response = await axios.get('https://kernverse-backend.onrender.com/profile', {withCredentials:true});
         setUserInfo(response.data);
       } catch(error) {
         console.error("Error fetching user data:", error);

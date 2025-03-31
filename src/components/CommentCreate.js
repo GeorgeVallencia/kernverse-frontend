@@ -35,7 +35,7 @@ function CommentCreate({ onOpen, onAddComment, blogId }) {
   }
 
     try {
-      const response = await axios.post('http://localhost:4000/comments', { comment: newComment, blogId }, { withCredentials: true, headers: { 'Content-Type': 'application/json' } });
+      const response = await axios.post('https://kernverse-backend.onrender.com/comments', { comment: newComment, blogId }, { withCredentials: true, headers: { 'Content-Type': 'application/json' } });
       //setComments([...comments, response.data]);
 
       console.log('Comment posted successfully:', response.data); // Log successful response

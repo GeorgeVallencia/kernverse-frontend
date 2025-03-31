@@ -18,7 +18,7 @@ function PublishPage() {
 
   const handleClap = async (blogId, commentText) => {
     try {
-      const response = await fetch('http://localhost:4000/claps', {
+      const response = await fetch('https://kernverse-backend.onrender.com/claps', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function PublishPage() {
       if (response.ok) {
 
         // After successfully clapping, fetch the latest blog data with updated clap count
-      const updatedBlog = await fetch(`http://localhost:4000/claps/${blogId}`).then(res => res.json());
+      const updatedBlog = await fetch(`https://kernverse-backend.onrender.com/claps/${blogId}`).then(res => res.json());
 
         // Update the clap count locally
         setBlogs(prevBlogs =>
@@ -54,7 +54,7 @@ function PublishPage() {
 
   const fetchCommentCount = async (blogId) => {
   try {
-    const response = await fetch(`http://localhost:4000/comments/${blogId}/count`);
+    const response = await fetch(`https://kernverse-backend.onrender.com/comments/${blogId}/count`);
     const data = await response.json();
     return data.commentCount;
   } catch (error) {
@@ -97,10 +97,11 @@ function PublishPage() {
   useEffect(() => {
     const fetchBlogs = async () => {
         try {
-            const response = await fetch('http://localhost:4000/published-posts');
+            const response = await fetch('https://kernverse-backend.onrender.com/published-posts');
             const blogs = await response.json();
+            //console.log('Fetched blogs:', blogs);
 
-            // const blogsWithCounts = blogs.map((blog) => ({
+           // const blogsWithCounts = blogs.map((blog) => ({
             //     ...blog,
             //     clapCount: blog.clapCount || 0,
             //     commentCount: blog.commentCount || 0,
@@ -117,7 +118,7 @@ function PublishPage() {
 
 
   // useEffect(() => {
-  //   fetch('http://localhost:4000/published-posts').then(response => {
+  //   fetch('https://kernverse-backend.onrender.com/published-posts').then(response => {
   //     response.json().then(blogs => {
 
   //       // const [commentCount, setCommentCount] = useState(0);
@@ -147,7 +148,7 @@ function PublishPage() {
         </div>
         <div className="flex flex-col tracking-widest">
           <div className="mb-3 sm:mr-3">
-            {blog.cover && <img src={'http://localhost:4000/'+blog.cover} alt={blog.title} className="rounded" />}
+            {blog.cover && <img src={'https://kernverse-backend.onrender.com/'+blog.cover} alt={blog.title} className="rounded" />}
           </div>
           <div className="flex flex-col mt-8">
             <p>{blog.story}</p>

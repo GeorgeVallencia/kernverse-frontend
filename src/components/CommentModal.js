@@ -31,7 +31,7 @@ function CommentModal({ blogId, onComment, onAddComment }) {
 //   const handleAddComment = async (newComment) => {
 //   try {
 //     // Send the new comment to the backend
-//     const response = await axios.post('http://localhost:4000/comments', {
+//     const response = await axios.post('https://kernverse-backend.onrender.com/comments', {
 //       blogId,
 //       text: newComment.text, // Include comment text or other necessary fields
 //     });
@@ -41,7 +41,7 @@ function CommentModal({ blogId, onComment, onAddComment }) {
 //       setComments(updatedComments);
 
 //       // Increment commentCount in the backend
-//       await axios.put(`http://localhost:4000/published-posts/${blogId}/commentCount`);
+//       await axios.put(`https://kernverse-backend.onrender.com/published-posts/${blogId}/commentCount`);
 
 //       // Notify the parent about the updated count
 //       onAddComment(updatedComments.length);
@@ -58,7 +58,7 @@ function CommentModal({ blogId, onComment, onAddComment }) {
 
     const fetchComments = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/comments/${blogId}`);
+        const response = await axios.get(`https://kernverse-backend.onrender.com/comments/${blogId}`);
         console.log(response.data);
         setComments(response.data || []);
       } catch (err) {
